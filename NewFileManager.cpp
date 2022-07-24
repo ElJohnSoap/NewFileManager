@@ -1,4 +1,15 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+﻿//Файловый менеджер должен иметь такие возможности :
+//■ показывать содержимое дисков;
+//■ создавать папки / файлы;
+//■ удалять папки / файлы;
+//■ переименовывать папки / файлы;
+//■ копировать / переносить папки / файлы;
+//■ вычислять размер папки / файла;
+//■ производить поиск по маске(с поиском по подпапкам) и так далее.
+
+
+
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <io.h>
@@ -8,16 +19,21 @@
 #include <IntSafe.h>
 #include <Windows.h>
 #include <set>
+#include <direct.h>
+#include <filesystem>
 
+#include "dialogWithUser.h"
 #include "FileManager.h"
 using namespace std;
+namespace fs = filesystem;
+
 
 int main(void)
 {
     setlocale(LC_ALL, "ru");
-    FileManager One;
-    One.ShowAllDisks();
-    One.ShowFolderContents();
+	dialogWithUser dialog;
+    
+    dialog.receivingProcessingCommand();
 }
 
 //int main()
@@ -68,3 +84,5 @@ int main(void)
 //    } while (_findnext(hFile, &c_file) == 0);
 //    _findclose(hFile);
 //}
+
+//Сделать обработку перехода на другой диск

@@ -9,27 +9,55 @@
 #include <IntSafe.h>
 #include <Windows.h>
 #include <set>
+#include <direct.h>
+#include <filesystem>
+#include <fstream>
 using namespace std;
+namespace fs = filesystem;
 
 class FileManager
 {
 private:
 	string currentPath;
+	string allDiscs;
 
 public:
 	
-	FileManager (string path) : currentPath { path } {}
-	FileManager() : FileManager("C:\\") {}
+	FileManager() 
+	{
+		stringAllDisks(allDiscs);
+		string first = allDiscs.substr(0, 1);
+		currentPath = first + ":\\";
+	}
 
 	string getCurrenPath();
+	
+	string getAllDisks();
+	
 	void setCurrentPath(string path);
 
-	void ShowAllDisks();
+	void showAllDisks();	//show all disks
 
-	void ShowFolderContents();
+	void stringAllDisks(string &a);// получает все диски и записывает их в строку a
+
+	void showFolderContents();// show all files and folders in current path
+
+	void creatFolder(string path);	
+
+	void deleteFolder(string path);
 	
-
-
-
+	void renameFolder (string path, string newName);
+	
+	bool changeDirectoryDown(string folder); // change current path to next folder
+		
+	void creatFile (string path);
+	
+	void deleteFile(string path);
+	
+	void renameFile(string path, string newName);
+	
+	int fileSize(string path);
+	
+	void showCurrentPath ();
 };
 
