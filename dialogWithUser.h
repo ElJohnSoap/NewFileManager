@@ -29,10 +29,16 @@ public:
 
 	void receivingProcessingCommand();
 	void help();
-	string setPath();
-	FileManager& commandRoot(FileManager&a);
-	FileManager& commandCd(FileManager& a);
-	FileManager& commandPd(FileManager& a);
+	string setName();
+	FileManager& commandRoot(FileManager&a); //перейти в коневой каталог
+	FileManager& commandCd(FileManager& a);  //сменить директорию вниз
+	FileManager& commandPd(FileManager& a); //сменить директорию вверх
+	FileManager& commandCfo(FileManager& a);//создать директорию
+	FileManager& commandCfi(FileManager& a);//создать файл
+	FileManager& commandDelFi(FileManager& a);//удалить файл
+	FileManager& commandDelDir(FileManager& a);//удалить директорию
+	FileManager& commandReFol(FileManager& a);
+	FileManager& commandReFile(FileManager& a);
 
 };
 

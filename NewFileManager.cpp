@@ -30,11 +30,15 @@ namespace fs = filesystem;
 
 int main(void)
 {
-    setlocale(LC_ALL, "ru");
-	dialogWithUser dialog;
-    
-    dialog.receivingProcessingCommand();
-}
+	setlocale(LC_ALL, "ru");
+	/*dialogWithUser dialog;
+
+	dialog.receivingProcessingCommand();*/
+	FileManager test;
+	auto a = test.fileSearch("C:\\test\\test3\\*.txt");
+	cout << a;
+	}
+
 
 //int main()
 //{

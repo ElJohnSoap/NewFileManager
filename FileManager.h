@@ -42,15 +42,17 @@ public:
 
 	void showFolderContents();// show all files and folders in current path
 
-	void creatFolder(string path);	
+	void createFolder(string path);	
 
 	void deleteFolder(string path);
 	
 	void renameFolder (string path, string newName);
 	
-	bool changeDirectoryDown(string folder); // change current path to next folder
+	bool directorySearch(string folder); // если находит папку возвращает тру
+	
+	bool fileSearch(); // если находит файл возвращает тру
 		
-	void creatFile (string path);
+	void createFile (string path);
 	
 	void deleteFile(string path);
 	
