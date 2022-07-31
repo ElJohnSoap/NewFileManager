@@ -14,6 +14,8 @@ void dialogWithUser::help()
 	cout << "cfi - create file" << endl;
 	cout << "delfi - delete file" << endl;
 	cout << "deldir - delete folder" << endl;
+	cout << "refile - rename file" << endl;
+	cout << "refol - rename folder" << endl;
 	cout << "exit - exit program" << endl;
 	cout << "cls - clear screen" << endl;
 }
@@ -162,7 +164,7 @@ FileManager& dialogWithUser::commandReFile(FileManager& a)
 		cout << "file not found" << endl;
 	return a;
 	
-	std::filesystem::exists("helloworld.txt");//!!!!!!!!!!!!!
+	//std::filesystem::exists("helloworld.txt");//!!!!!!!!!!!!!
 
 }
 

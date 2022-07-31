@@ -35,8 +35,8 @@ int main(void)
 
 	dialog.receivingProcessingCommand();*/
 	FileManager test;
-	auto a = test.fileSearch("C:\\test\\test3\\*.txt");
-	cout << a;
+	/*auto a = test.fileSearch("C:\\test\\test3\\*.txt");
+	cout << a;*/
 	}
 
 
